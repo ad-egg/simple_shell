@@ -14,6 +14,7 @@ This file is a manual page for our simple Unix command line interpreter.
 - Only use system calls when necessary
 ### Output
 - Unless specified, our program should have the exact same output as `sh` (`/bin/sh`) as well as the exact same error output. The only difference is when we print an error, the name of the program will be equivalent to our `argv[0]` (see below)
+
 Example of error with `sh`:
 ```
 $ echo "qwerty" | /bin/sh
@@ -100,4 +101,6 @@ What our UNIX command line interpreter does:
 - Handle the `PATH`
 - Take the command `exit` that exits the shell.
 - Print current environment with `env`
-
+What our shell does not have to do:
+- Be able to move the cursor.
+- Handle special characters: `"`, `'`, `\`, `*`, `&`, `#`, `` ` ``
