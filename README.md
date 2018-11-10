@@ -101,6 +101,7 @@ What our UNIX command line interpreter does:
 - Handle the `PATH`
 - Take the command `exit` that exits the shell.
 - Print current environment with `env`
+
 What our shell does not have to do:
 - Be able to move the cursor.
 - Handle special characters: `"`, `'`, `\`, `*`, `&`, `#`, `` ` ``
