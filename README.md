@@ -88,4 +88,16 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
+### The simple shell
+What our UNIX command line interpreter does:
+- Display a prompt and wait for the user to type a command. A command line always ends with a new line.
+- The command is displayed again each time a command has been executed.
+- The command lines are simple, no semicolons, no pipes, no redirections or any other advanced features.
+- The command lines are made only of one word.
+- If an executable cannot be found, print an error message and display the prompt again.
+- Handle errors.
+- Handle the "end of file" condition (`Control+D`)
+- Handle the `PATH`
+- Take the command `exit` that exits the shell.
+- Print current environment with `env`
 
