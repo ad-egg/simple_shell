@@ -1,0 +1,26 @@
+." manpage for our simple shell
+
+.TH HSH 1 "20 November 2018" "Version 1.0" "General Command"
+
+.SH NAME
+\fBhsh\fR \- UNIX command interpreter (shell)
+
+.SH SYNOPSIS
+\fBhsh\fR [command_string][argument]
+
+.SH DESCRIPTION
+\fBhsh\fR is a simple shell that reads a line from the terminal, interprets it, and executes it. It works in both interactive (takes commands from the terminal) and non-interactive (takes piped commands) modes.
+
+.SH USAGE EXAMPLE
+$ hsh
+.br
+($) /bin/ls
+.br
+hsh main.c simple_shell.c
+.br
+($) exit
+.br
+$
+
+.SH AUTHORS
+Athena Deng and Rashaad Colbert Jr
