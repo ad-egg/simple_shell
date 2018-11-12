@@ -11,5 +11,5 @@
 #include <string.h>
 
 void rev_string(char *s);
-char *_itoa(int n);
+void _itoa(int n, char *str);
 #endif

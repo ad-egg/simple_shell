@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
+#include "athena.h"
 
 /**
  * rev_string - reverses a string
@@ -30,15 +31,12 @@ void rev_string(char *s)
 /**
  * _itoa - converts integer into characters to be printed
  * @n: integer to be converted
- * @s: character string that integer will be converted into
- * Return: pointer to string
+ * @str: string to be written into
  */
-char *_itoa(int n, char *s)
+void _itoa(int n, char *str)
 {
 	int i, n2;
-	char *str;
 
-	str = s;
 	i = 0;
 
 	if (n < 0)
@@ -53,10 +51,7 @@ char *_itoa(int n, char *s)
 	}
 	if (n < 0)
 		str[i++] = '-';
-	str[i++] = '\0';
+	str[i] = '\0';
 
 	rev_string(str);
-
-	return (str);
 }
-
