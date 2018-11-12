@@ -7,7 +7,7 @@
 */
 int main(int ac, char **av);
 {
-	intake(argv[0]);
+	egg(argv[0]);
 
 	return (0);
 }

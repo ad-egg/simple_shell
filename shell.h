@@ -9,6 +9,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct path
+{
+	char *head;
+	struct path *next;
+} path_t;
 
 /* string functions */
 char *_strcpy(char *dest, char *src);
