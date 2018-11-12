@@ -28,7 +28,7 @@ void rev_string(char *s)
 }
 
 /**
- * itoa - converts integer into characters to be printed
+ * _itoa - converts integer into characters to be printed
  * @n: integer to be converted
  * @s: character string that integer will be converted into
  * Return: pointer to string
@@ -45,7 +45,7 @@ char *_itoa(int n, char *s)
 		n2 = (n * (-1));
 	else
 		n2 = n;
-	while ((n2 / 10) > 0)
+	while (n2 > 0)
 	{
 		str[i++] = ((n2 % 10) + '0');
 		n2 = (n2 / 10);
