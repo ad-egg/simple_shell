@@ -10,5 +10,5 @@
 #include <errno.h>
 
 void rev_string(char *s);
-char *itoa(int n, char *s);
+char *_itoa(int n, char *s);
 #endif
