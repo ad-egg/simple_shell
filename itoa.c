@@ -52,7 +52,7 @@ char *_itoa(int n, char *s)
 	}
 	if (n < 0)
 		str[i++] = '-';
-	str[i] = '\0';
+	str[i++] = '\0';
 
 	rev_string(str);
 
