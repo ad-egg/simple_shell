@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <string.h>
 
 void rev_string(char *s);
 char *_itoa(int n, char *s);
