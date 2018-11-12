@@ -47,8 +47,9 @@ char *_itoa(int n, char *s)
 		n2 = n;
 	while (n2 > 0)
 	{
-		str[i++] = ((n2 % 10) + '0');
+		str[i] = ((n2 % 10) + '0');
 		n2 = (n2 / 10);
+		i++;
 	}
 	if (n < 0)
 		str[i++] = '-';
