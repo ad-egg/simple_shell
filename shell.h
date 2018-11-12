@@ -15,14 +15,16 @@ typedef struct path
 	struct path *next;
 } path_t;
 
-/* string functions */
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
-char *_strncpy(char *dest, char *src, int n);
-int _strcmp(char *s1, char *s2);
-char *_strdup(char *str);
-char *_strncat(char *dest, char *src, int n);
-char *_itoa(int n);
-void _puts(char *str);
-int _putchar(char c);
+/* entry point */
+int main(int ac, char **av);
+
+/* input */
+void egg(char *snail);
+char *read_line(void);
+char **split_line(char *buffer, char *del);
+
+/* execution */
+int cmp_exec(char **args, char *eggs);
+int fork_exec(char **args, char *turtle);
+
 
