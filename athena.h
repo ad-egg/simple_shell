@@ -15,4 +15,5 @@ void *_itoa(int n, char *str);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_string(char *line);
 char *prompt_getline(void);
+int _strcmp(char *s1, char *s2);
 #endif
