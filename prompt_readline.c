@@ -11,9 +11,9 @@ char *prompt_getline(void)
 	char *prompt = "$ ";
 	char *nline = "\n";
 
+	write(STDOUT_FILENO, nline, 1);
 	write(STDOUT_FILENO, prompt, 2);
 	getline(&buffer, &buffer_size, stdin);
-	write(STDOUT_FILENO, nline, 1);
 	return (buffer);
 }
 
