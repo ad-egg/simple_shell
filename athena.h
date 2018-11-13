@@ -11,5 +11,6 @@
 #include <string.h>
 
 void rev_string(char *s);
-void _itoa(int n, char *str);
+void *_itoa(int n, char *str);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
