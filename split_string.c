@@ -8,13 +8,9 @@
 char **split_string(char *line)
 {
 	char **tokens, *token;
-	int i, size;
+	int i;
 
-	if (line == NULL)
-		return (NULL);
-	for (size = 0; line[size] != '\0'; size++)
-		;
-	tokens = malloc(sizeof(char) * size);
+	tokens = malloc(sizeof(char) * 1024);
 	if (tokens == NULL)
 		return (NULL);
 	token = strtok(line, " ");
