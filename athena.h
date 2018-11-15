@@ -13,6 +13,9 @@
 
 extern char **environ;
 
+int changedir(char *path);
+void leave(void);
+void print_wd(void);
 void summon_child(char **argument);
 void print_curr_env(void);
 char *_getenv(const char *name);
