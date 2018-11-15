@@ -13,6 +13,7 @@
 
 extern char **environ;
 
+void summon_child(char **argument);
 void print_curr_env(void);
 char *_getenv(const char *name);
 void rev_string(char *s);
