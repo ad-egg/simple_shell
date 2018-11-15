@@ -13,6 +13,7 @@
 
 extern char **environ;
 
+char *_getenv(const char *name);
 void rev_string(char *s);
 void *_itoa(int n, char *str);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
