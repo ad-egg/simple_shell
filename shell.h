@@ -26,6 +26,11 @@ char **split_line(char *buffer, char *del);
 /* path functions */
 path_t path_gen(void);
 
+/* enviornment funcitons */
+path_t env(void);
+path_t env_finder(void);
+int env_match(char *input);
+void env_start(char *str, char *value);
 /* execution */
 int cmp_exec(char **args, char *eggs);
 int fork_exec(char **args, char *turtle);

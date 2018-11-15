@@ -7,7 +7,7 @@
 */
 int main(int ac, char **av);
 {
-	egg(argv[0]);
+	snail(argv[0]);
 
 	return (0);
 }

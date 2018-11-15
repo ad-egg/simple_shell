@@ -10,13 +10,8 @@ char *read_line(void)
 	char *line = NULL;
 	ssize_t bufsize = 0; /*will change according to input*/
 	
-	if (isatty(STDIN_FILENO) == 1)
-		write(1, "$", 2);
-	if (getline(&line, &bufsize, stdin) <= 0)
-	{	
-		if (isatty(STDIN_FILENO) == 1)
-			write(STDOUT_FILENO, "\n", 1);
-		exit;
-	}
+	
+	write(1, "$", 2);
+	getline(&line, &bufsize, stdin);vi 
 	return (line);
 }

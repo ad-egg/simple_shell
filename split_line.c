@@ -7,4 +7,19 @@
 */
 
 char **split_line(char *buffer, char *del)
+{
+	char **tokens, *token;
+	int i;
 
+	tokens = malloc(sizeof(char) * 1024);
+	if (tokens == NULL)
+		return (NULL);
+	token = strtok(line, " ");
+	for (i = 0; token != NULL; i++)
+	{
+		tokens[i] = token;
+		token = strtok(NULL, " ");
+	}
+	tokens[i] = NULL;
+	return (tokens);
+}
