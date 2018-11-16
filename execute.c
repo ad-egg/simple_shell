@@ -6,7 +6,12 @@
  * Return: 1
 */
 int cmp_exec(char **args, char *eggs)
+{
+	char *ex;
 
+	if (args[0][0] = '/')
+	{
+		
 /**
  * fork_exec - forks the current process then exectues the command
  * @args: arguemnt recieved
@@ -14,5 +19,5 @@ int cmp_exec(char **args, char *eggs)
  * Return: -1, 0, 1
 */
 
-int fork_exec(char **args, char *turtle)
+int execute(char **args, char *turtle)
 

@@ -31,7 +31,7 @@ path_t path_gen(void);
 
 /* enviornment funcitons */
 path_t env(void);
-path_t env_finder(void);
+char *env_find(char *var);
 int env_match(char *input);
 void env_start(char *str, char *value);
 
