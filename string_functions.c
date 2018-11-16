@@ -72,8 +72,8 @@ void _puts(char *str)
 	int w;
 
 	for (w = 0; str[w] != '\0'; w++)
-		_putchar(str[w]);
-	_putchar('\n');
+		putchar(str[w]);
+	putchar('\n');
 }
 /**
  * _putchar - writes the character c to stdout

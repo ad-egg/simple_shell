@@ -5,9 +5,11 @@
  * @argv: array of strings
  * Return: 0
 */
-int main(int ac, char **av);
+int main(int argc, char **argv)
 {
-	snail(argv[0]);
+	if (!argc)
+		return (0);
+	egg(argv[0]);
 
 	return (0);
 }

@@ -12,6 +12,6 @@ char *read_line(void)
 	
 	
 	write(1, "$", 2);
-	getline(&line, &bufsize, stdin);vi 
+	getline(&line, &bufsize, stdin);
 	return (line);
 }

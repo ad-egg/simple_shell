@@ -11,14 +11,15 @@ void egg(char *snail)
 	char **args;
 	int status, i;
 
-	enviornment = env();
-	path = path_gen();
-	line_count = 0;
+/*	enviornment = env();
+	path = path_gen();*/
+	int line_count = 0;
 
 	status = 1; /*keeps loop running while shell is open */
 	while (status)
 	 {
-		line_count = 0;
+		/*signal(SIGINT, sig_handler);*/
+		line_count++;
 		line = read_line();/*function to read a line*/
 		if (line[0] == '\n')
 		{
@@ -26,10 +27,10 @@ void egg(char *snail)
 			continue;
 		}
 	
-		args = split_line(line);/*split line into arguments*/
+		args = split_line(line, "\n "); /*split line into arguments
 		
 		if (is_built(args, line) == 1)
-			status = exectue(args, eggs); /*determine when to exit */
+			status = exectue(args, snail); /*determine when to exit */
 		
 		i = 0;
 		while (args[i] != NULL)
@@ -38,9 +39,11 @@ void egg(char *snail)
 				free(args[i]);
 			i++;
 		}
-		free (line);
-		free (args);
+		if (line)
+			free (line);
+		if (args)
+			free (args);
 	}
-	free(path);
-	free(enviornment);
+	/*free(path);
+	free(enviornment);*/
 }		 
