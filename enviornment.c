@@ -9,11 +9,11 @@ path_t env(void)
 {
 	path_t *head;
 	path_t *house;
-	int count - 0;
+	int count = 0;
 
 	head = malloc(sizeof(path_t)); /*linked list*/
 	if (!head)
-		return (NULL);
+		return(NULL);
 	
 	house = head; /*pointer to beginning of list */
 

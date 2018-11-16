@@ -11,7 +11,7 @@ int ayto(char z, const char *input)
 
 	for(x = 0; input[x] != '\0'; x++)
 	{
-		if (z = input[x])
+		if (z == input[x])
 			return (1);
 	}
 	return (0);

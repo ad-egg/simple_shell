@@ -1,22 +1,6 @@
 #include "shell.h"
 
-/**
- * _strlen - returns the length of a string.
- * @s: input string to find the length of.
- *
- * Return: length of the string.
- */
-int _strlen(char *s)
-{
-	int ct = 0;
-
-	while (s[ct])
-		ct++;
-	return (ct);
-}
-
-/**
- * _strdup - copies a string into a newly allocated space in memory.
+ * *_strdup - copies a string into a newly allocated space in memory.
  * @str: input string to copy.
  *
  * Return: returns a pointer to the copied string.
@@ -108,16 +92,19 @@ char *_strcpy(char *dest, char *src)
         return (dest);
 }
 /**
- * _puts - prints a string
- * @str : to input string
- * Return: 0
+ **_strcpy3 - copy string starting at specific index of DEST
+ * @dest: pointer to dest
+ * @src: pointer to src
+ * @n: len of dest
+ *
+ * Return: copied string
  */
-void _puts(char *str)
+char *_strcpy3(char *dest, char *src, int n)
 {
-        int w;
+	int i;
 
-	for (w = 0; str[w] != '\0'; w++)
-                putchar(str[w]);
-        putchar('\n');
+	for (i = 0; src[i] != '\0'; i++, n++)
+		dest[n] = src[i];
+	dest[n] = '\0';
+	return (dest);
 }
-

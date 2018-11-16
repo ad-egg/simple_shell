@@ -8,7 +8,7 @@
 char *read_line(void)
 {
 	char *line = NULL;
-	ssize_t bufsize = 0; /*will change according to input*/
+	size_t bufsize = 0; /*will change according to input*/
 	
 	
 	write(1, "$", 2);

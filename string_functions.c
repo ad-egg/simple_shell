@@ -35,34 +35,6 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * _atoi - converts a string to an integer
- * @n: pointer
- * Return: 0
- */
-char *_itoa(int n);
-{
-	int a, num;
-	unsigned int b;
-
-	a = b = 0;
-	num = 1;
-
-	for (a = 0; n[a] <= '0' && n[a] != '\0'; a++)
-	{
-		if (n[a] == '-')
-			num = num * -1;
-	}
-	if (n[a] == '\0')
-		return (b);
-
-	for (; n[a] != '\0' && n[a] != ';'; a++)
-	{
-	if (n[a] >= '0' && n[a] <= '9' && n[a] != '\0')
-		b = b * 10 + (n[a] - '0');
-	}
-	return (b * num);
-}
-/**
  * _puts - prints a string
  * @str : to input string
  * Return: 0
