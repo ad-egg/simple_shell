@@ -18,23 +18,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy - function that copies a string
- * @dest: destination to copy to
- * @src: string to be copied
- * Return: 0
-*/
-char *_strcpy(char *dest, char *src)
-{
-	int sc, kd;
-
-	for (sc = 0; src[sc] != '0'; sc++)
-		;
-	for (kd = 0; dest[kd] != '0'; kd++)
-		dest[kd] = src[sc];
-	return (dest);
-}
-
-/**
  * _puts - prints a string
  * @str : to input string
  * Return: 0
@@ -58,4 +41,3 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-

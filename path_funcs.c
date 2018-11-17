@@ -5,37 +5,37 @@
  * path_gen - generates the path
  * Return: head
 */
-path_t path_gen(void)
+path_t *path_gen(void)
 {
 	path_t *head;
 	path_t *node;
-	char *path, *token;
+	char *the_path, *token;
 
-	path = NULL;
-	node = malloc(sizeof(path_t);/* node in linked list */
-	if (!token)
+	the_path = NULL;
+	node = malloc(sizeof(path_t));/* node in linked list */
+	if (!node)
 		return (NULL);
 
-	path = enviornment("PATH"); /* points to variable list */
-	if (!path)
+	the_path = env_find("PATH"); /* points to variable list */
+	if (!the_path)
 	{
-		free(path);
+		free(the_path);
 		return (NULL);
 	}
 
-	token = strtok(path, "=:;") /*splits the path into tokens */
+	token = _strtok(the_path, ":"); /*splits the path into tokens */
 	head = node;
 	
 	while (token)
 	{
 		node->ptr = _strdup(token);
-		token = _strtok(NULL, "=:;"); /*replaces with NULL*/
+		token = _strtok(NULL, ":"); /*replaces with NULL*/
 		if (token)
 		{ /*put the token in the linked lists if it exists*/
 			node->next = malloc(sizeof(path_t));
 			if (!node->next)
 			{
-				let_itgo(head);
+				pth_free(head);
 				return (NULL);
 			}
 			node = node->next;
@@ -43,21 +43,6 @@ path_t path_gen(void)
 		else
 			node->next = NULL;
 	}
-	free(path);
+	free(the_path);
 	return (head);
-}
-			
-/**
- * let_itgo - frees linked list crated by the path
- * @head: head of the list
- * Return: nothing
-*/
-void let_itgo(path_t *head)
-{
-	if (!head)
-		return;
-	if (!head->next)
-		let_itgo(head->next);
-	free(head->ptr);
-	free(head);
 }

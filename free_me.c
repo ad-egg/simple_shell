@@ -12,7 +12,7 @@ void pth_free(path_t *head)
 		return;
 	if (head->next != NULL)
 		pth_free(head->next);
-	free(head->dir);
+	free(head->ptr);
 	free(head);
 }
 

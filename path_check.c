@@ -11,7 +11,7 @@ char *path_check(path_t *head, char *input)
 
 	struct stat falcon;
 	path_t *node;
-	char *agruments;
+	char *arguments;
 
 	if(!input || !head)
 		return (NULL);
@@ -41,7 +41,7 @@ char *path_check(path_t *head, char *input)
 char *path_cat(char *s1, char *s2)
 {
 	char *together;
-	int count1, count2;
+	int count1, count2 = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -50,9 +50,9 @@ char *path_cat(char *s1, char *s2)
 
 	together = malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 2));
 	if (together == NULL)
-		return (NULL):
+		return (NULL);
 	for (count1 = 0; s1[count1]; count1++)
 		together[count1 + count2] = s2[count2];
 	together[count1 + count2] = '\0';
-	return (together)'
+	return (together);
 }

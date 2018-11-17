@@ -1,11 +1,10 @@
 #include "shell.h"
-/* enviornment functions */
-
+#include <unistd.h>
 /**
  * env - sets a linked list for the enviornment
  * Return: head of the linked list
 */
-path_t env(void)
+path_t *env(void)
 {
 	path_t *head;
 	path_t *house;
@@ -43,7 +42,7 @@ char *env_find(char *var)
 	unsigned int count;
 
 	same = NULL;
-	node = env; /*runs enviornment list (man env)*/
+	node = enviornment; /*runs enviornment list (man env)*/
 
 	while (node)
 	{
@@ -78,23 +77,23 @@ char *env_find(char *var)
 int env_match(char *input)
 {
 	path_t *peter;
-	int count = 0; count_two = 0;
+	int count = 0, count_two = 0;
 
-	peter = env; /*setting enviornment*/
+	peter = enviornment; /*setting enviornment*/
 	while (peter)
 	{
 		count = 0;
-		while(input[count] = peter->next[count])
+		while(input[count] == peter->ptr[count])
 		{
 			count++;
-			if (input[count + 1] == '\0' && (peter->next)[ct + 1] == '=')
-				return (count2);
+			if (input[count + 1] == '\0' && (peter->ptr)[count + 1] == '=')
+				return (count_two);
 		}
-		count2++;
+		count_two++;
 		peter = peter->next;
 		if (peter == NULL)
 			return (-1);
 	}
-	return (count2;
+	return (count_two);
 }
 

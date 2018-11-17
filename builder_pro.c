@@ -22,7 +22,7 @@ void shell_exit(char **args, char *input)
 			free(args);
 		}
 		pth_free(the_path);
-		pth_free(env);
+		pth_free(enviornment);
 		exit(0);
 }
 
@@ -34,7 +34,7 @@ void print_enviornment(void)
 {
 	path_t *node;
 
-	node = env;
+	node = enviornment;
 	while (node)
 	{
 		write(1, node->ptr, _strlen(node->ptr));

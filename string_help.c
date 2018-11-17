@@ -1,10 +1,4 @@
 #include "shell.h"
-
- * *_strdup - copies a string into a newly allocated space in memory.
- * @str: input string to copy.
- *
- * Return: returns a pointer to the copied string.
- */
 char *_strdup(char *str)
 {
 	int ct;

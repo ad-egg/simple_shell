@@ -18,7 +18,7 @@ int isit_built(char **args, char *input)
 		print_enviornment();
 		return(0);
 	}
-	else if (_strcmp(args[0], "setenv") == )
+	else if (_strcmp(args[0], "setenv") == 0)
 	{
 		env_start(args[1], args[2]);
 		return (0);

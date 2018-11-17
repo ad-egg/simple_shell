@@ -18,34 +18,34 @@ void env_start(char *str, char *value)
 		exit(0);
 	}
 
-	len = env_find(str);
+	len = env_match(str);
 
-	node = malloc(sizeof(path_t));
-	if (!node)
+	var = malloc(sizeof(path_t));
+	if (!var)
 	{
 		perror("error, error, error");
 	}
 
-	val = _strcat(str, "=")
+	val = _strcat(str, "=");
 	val_len = _strlen(val);
-	new_env = realloc(val, val_len, (val_len + _strlen(value) + 1));
+	new_env = _realloc(val, val_len, (val_len + _strlen(value) + 1));
 	_strcpy3(new_env, value, val_len);
 
-	copy = env;
-	node = env;
+	copy = enviornment;
+	node = enviornment;
 
 	if(len >= 0)
 	{
-		while (count != (len - 1))
+		while (counter != (len - 1))
 		{
 			node = node->next;
 			copy = copy->next;
-			count++;
+			counter++;
 		}
 		copy = copy->next;
-		new_env->ptr = node;
-		new_env->next = node=>next->next;
-		node->next = new_env;
+		var->ptr = new_env;
+		var->next = node->next->next;
+		node->next = var;
 		free(copy);
 	}
 	else
@@ -54,9 +54,9 @@ void env_start(char *str, char *value)
 		{
 			node = node->next;
 		}
-		new_env->ptr = node;
-		node->next = new_env;
-		new_env->next = NULL;
+		var->ptr = new_env;
+		node->next = var;
+		var->next = NULL;
 	}
 	free(val);
 }
