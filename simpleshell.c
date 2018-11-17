@@ -12,13 +12,13 @@ int main(int ac, char **av, char **env)
 	int status, i;
 	char *line = NULL, **args = NULL, *nocommand = ": command not found";
 	char *sp = " ", *sep = ":", *leave = "exit", *flora = "env";
-	char *bath;
+	char *bath, **tiles;
 
 	status = 1;
 
 	bath = getpath();
 	/* got PATH */
-	
+	tiles = split_string(bath, sep);
 	/* strtok the PATH */
 
 	while(status)
@@ -58,5 +58,7 @@ int main(int ac, char **av, char **env)
 		free(line);
 		free(args);
 	}
+	free(bath);
+	free(tiles);
 	return (0);
 }
