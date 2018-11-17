@@ -5,7 +5,7 @@
  * @line: string to be split
  * Return: pointer to array of arrays
  */
-char **split_string(char *line)
+char **split_string(char *line, char *delim)
 {
 	char **tokens, *token;
 	int i;
@@ -13,11 +13,11 @@ char **split_string(char *line)
 	tokens = malloc(sizeof(char) * 1024);
 	if (tokens == NULL)
 		return (NULL);
-	token = strtok(line, " ");
+	token = strtok(line, delim);
 	for (i = 0; token != NULL; i++)
 	{
 		tokens[i] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, delim);
 	}
 	tokens[i] = NULL;
 	return (tokens);
