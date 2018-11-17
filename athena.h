@@ -13,8 +13,7 @@
 
 extern char **environ;
 
-int changedir(char *path);
-void leave(void);
+char *getpath(void);
 void print_wd(void);
 void summon_child(char **argument);
 void print_curr_env(void);
@@ -22,7 +21,7 @@ char *_getenv(const char *name);
 void rev_string(char *s);
 void *_itoa(int n, char *str);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char **split_string(char *line);
+char **split_string(char *line, char *delim);
 char *prompt_getline(void);
 int _strcmp(char *s1, char *s2);
 #endif
