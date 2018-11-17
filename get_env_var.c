@@ -40,3 +40,15 @@ char *_getenv(const char *name)
 	return (here);
 }
 
+/**
+ * getpath - gets the PATH
+ * Return: PATH string
+ */
+char *getpath(void)
+{
+	char *name = "PATH";
+	char *string = NULL;
+
+	string = _getenv(name);	
+	return (string);
+}
