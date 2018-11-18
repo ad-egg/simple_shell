@@ -8,7 +8,8 @@
 void printerror(char *arg, int lcount)
 {
 	int i, lcountchars;
-	char *countstr;
+	char *countstr = NULL;
+	char *nocommand = ": command not found";
 
 	for (i = 0; arg[i] != '\0'; i++)
 		;

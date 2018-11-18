@@ -11,8 +11,7 @@ int main(void)
 	char *line = NULL, **args = NULL,
 	*sp = " ", *sep = ":", *bath = NULL, 
 	**tiles = NULL, **bricks = NULL, *eq = "=", *comp = NULL,
-	*leave = "exit", *flora = "env", *prwd = "pwd",
-	*countstr = NULL, *nocommand = ": command not found";
+	*leave = "exit", *flora = "env", *prwd = "pwd";
 
 	bath = getpath();/* got PATH */
 	bricks = split_string(bath, eq);/* splits PATH from rest of string */
@@ -51,14 +50,7 @@ int main(void)
 		}
 		if (tiles[n] == NULL)
 		{
-			for (i = 0; args[0][i] != '\0'; i++)
-				;
-			write(STDOUT_FILENO, args[0], i);
-			write(STDOUT_FILENO, ": ", 2);
-			_itoa(lcount, countstr);
-			lcountchars = _strlen(countstr);
-			write(STDOUT_FILENO, countstr, lcountchars);
-			write(STDOUT_FILENO, nocommand, 19);
+			printerror(comp, lcount);
 		}
 		free(args);
 		free(line);
