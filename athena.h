@@ -13,6 +13,7 @@
 
 extern char **environ;
 
+int _strlen(char *s);
 char *getpath(void);
 void print_wd(void);
 void summon_child(char **argument);
