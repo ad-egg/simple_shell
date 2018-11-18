@@ -6,7 +6,7 @@
  */
 void summon_child(char **argument)
 {
-	int i, status;
+	int status;
 	pid_t childpid;
 
 	childpid = fork();

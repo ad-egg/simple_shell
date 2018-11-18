@@ -28,7 +28,7 @@ int find_match(const char *s1, char *s2)
 char *_getenv(const char *name)
 {
 	int i, n;
-	char *here;
+	char *here = NULL;
 
 	for (i = 0; environ[i] != NULL; i++)
 	{

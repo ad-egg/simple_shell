@@ -2,63 +2,70 @@
 
 /**
  * main - a simple shell
- * @ac: number of arguments
- * @av: pointers to the arguments
- * @env: points to a NULL terminated array of arrays
- * Return: Always 0
+ * Return: 0 on success, 1 on any failure
  */
-int main(int ac, char **av, char **env)
+int main(void)
 {
-	int status, i;
-	char *line = NULL, **args = NULL, *nocommand = ": command not found";
-	char *sp = " ", *sep = ":", *leave = "exit", *flora = "env";
-	char *bath, **tiles;
+	int status = 1, i, lcount = 0, n, lcountchars = 0;
 
-	status = 1;
+	char *line = NULL, **args = NULL,
+	*sp = " ", *sep = ":", *bath = NULL, 
+	**tiles = NULL, **bricks = NULL, *eq = "=", *comp = NULL,
+	*leave = "exit", *flora = "env", *prwd = "pwd",
+	*countstr = NULL, *nocommand = ": command not found";
 
-	bath = getpath();
-	/* got PATH */
-	tiles = split_string(bath, sep);
-	/* strtok the PATH */
+	bath = getpath();/* got PATH */
+	bricks = split_string(bath, eq);/* splits PATH from rest of string */
+	tiles = split_string(bricks[1], sep);/* strtok the PATH directories */
 
-	while(status)
+	while (status)
 	{
-		if (line != NULL)
-			free(line);
+		lcount++;
 		if (args != NULL)
 			free(args);
+		if (line != NULL)
+			free(line);
 		line = prompt_getline();
 		/* prints prompt and get the line, should prob handle EOF in this func */
+
 		args = split_string(line, sp);
 		/* splits user input line into string of strings */
-
-		if (_strcmp(leave, args[0]) == 0)
+		comp = args[0];
+		if (_strcmp(leave, comp) == 0)
 			return (0);
-		else if (_strcmp(flora, args[0]) == 0)
+		else if (_strcmp(flora, comp) == 0)
 		{
 			print_curr_env();
 			continue;
 		}
-		else if (_strcmp() == 0)
+		else if (_strcmp(prwd, comp) == 0)
 		{
 			print_wd();
 			continue;
 		}
 
-		/* look through strtok'd PATH for match */
-		/* if find, summon_child to execve, also store y/n in integer */
-
-		/* if didn't find in PATH */
+		for (n = 0; tiles[n] != NULL; n++)
+		{
+			if (_strcmp(tiles[n], comp) == 0)
+				
+		}
+		if (tiles[n] == NULL)
 		{
 			for (i = 0; args[0][i] != '\0'; i++)
 				;
 			write(STDOUT_FILENO, args[0], i);
+			write(STDOUT_FILENO, ": ", 2);
+			_itoa(lcount, countstr);
+			lcountchars = _strlen(countstr);
+			write(STDOUT_FILENO, countstr, lcountchars);
 			write(STDOUT_FILENO, nocommand, 19);
 		}
-		free(line);
 		free(args);
+		free(line);
 	}
-	free(bath);
-	free(tiles);
+	if (tiles != NULL)
+		free(tiles);
+	if (bath != NULL)
+		free(bath);
 	return (0);
 }
