@@ -1,7 +1,12 @@
 #include "shell.h"
+/**
+ * _strdup - duplicaets a string
+ * @str: string
+ * Return: duplicate
+ */
 char *_strdup(char *str)
 {
-	int ct;
+	int count;
 	char *s;
 
 	if (str == NULL)
@@ -12,19 +17,16 @@ char *_strdup(char *str)
 	if (s == NULL)
 		return (NULL);
 
-	for (ct = 0 ; str[ct] != '\0' ; ct++)
-		s[ct] = str[ct];
-	s[ct] = '\0';
+	for (count = 0 ; str[count] != '\0' ; count++)
+		s[count] = str[count];
+	s[count] = '\0';
 	return (s);
 }
 /**
- * _strcmp - takes 2 strings and compares their sizes
- * @st1: the first input string to be compared.
- * @st2: the second input string to be compared.
- *
- * Return: 0 if strings are exactly the same size. If first string is longer
- * than the second string a positive number will be returned. If the first is
- *  shorter then a negative number will be returned.
+ * _strcmp - compares two strings
+ * @st1: 1st string to be compared
+ * @st2: 2nd  string to be compared
+ * Return: 0
  */
 int _strcmp(char *st1, char *st2)
 {
@@ -40,15 +42,14 @@ int _strcmp(char *st1, char *st2)
 		return ((int)(*st1 - *st2));
 }
 /**
- * _strcat - concatenates two strings.
+ * _strcat - concatenates two strings
  * @dest: first string
  * @src: second string
- *
- * Return: a pointer to the concatenated string.
+ *Return: a pointer to the concatenated string.
  */
 char *_strcat(char *dest, char *src)
 {
-	char *new_st;
+	char *string;
 	int ct1, ct2, st1 = 0, st2 = 0;
 
 	while (dest[st1])
@@ -60,20 +61,20 @@ char *_strcat(char *dest, char *src)
 		st2++;
 	}
 
-	new_st = malloc(sizeof(st1 + st2 + 2));
+	string = malloc(sizeof(st1 + st2 + 2));
 
 	for (ct1 = 0 ; dest[ct1] != '\0' ; ct1++)
 	{
-		new_st[ct1] = dest[ct1];
+		string[ct1] = dest[ct1];
 	}
 
 	for (ct2 = 0 ; src[ct2] != '\0' ; ct2++)
 	{
-		new_st[ct1] = src[ct2];
+		string[ct1] = src[ct2];
 		ct1++;
 	}
-	new_st[ct1] = '\0';
-	return (new_st);
+	string[ct1] = '\0';
+	return (string);
 }
 char *_strcpy(char *dest, char *src)
 {
@@ -86,14 +87,13 @@ char *_strcpy(char *dest, char *src)
         return (dest);
 }
 /**
- **_strcpy3 - copy string starting at specific index of DEST
- * @dest: pointer to dest
- * @src: pointer to src
- * @n: len of dest
- *
- * Return: copied string
+ **_strncpy - copy string at a specifix index
+ * @dest: destinaton
+ * @src: source
+ * @n: index
+ * Return: destination
  */
-char *_strcpy3(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 

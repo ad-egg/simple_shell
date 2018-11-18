@@ -1,10 +1,10 @@
 #include "shell.h"
-#include <unistd.h>
+
 /**
  * env - sets a linked list for the enviornment
  * Return: head of the linked list
 */
-path_t *env(void)
+path_t *_env(void)
 {
 	path_t *head;
 	path_t *house;
@@ -16,10 +16,10 @@ path_t *env(void)
 	
 	house = head; /*pointer to beginning of list */
 
-	while (enviorn[count]) /*enviorn makes user enviornment*/
+	while (environ[count]) /*enviorn makes user enviornment*/
 	{
-		house->ptr = _strdup(enviorn[count]);/*dup variable into list*/
-		if (enviorn[count + 1] != NULL)
+		house->ptr = _strdup(environ[count]);/*dup variable into list*/
+		if (environ[count + 1] != NULL)
 		{
 			house->next = malloc(sizeof(path_t));
 			house = house->next;

@@ -1,6 +1,4 @@
 #include "shell.h"
-#include <stdio.h>
-#include <stdlib.h>
 /*
  * read_line - reads the line
  * Return: 0

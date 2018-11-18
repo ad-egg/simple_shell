@@ -4,38 +4,36 @@
 /* string functions */
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - length of a string
  * @s: string
- * Return: string length
+ * Return: length of string
 */
 int _strlen(char *s)
 {
-	int c;
+	int i;
 
-	for (c = 0; s[c] != '\0'; c++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
-	return (c);
+	return (i);
 }
 
 /**
  * _puts - prints a string
- * @str : to input string
+ * @str : string
  * Return: 0
  */
 void _puts(char *str)
 {
-	int w;
+	int i;
 
-	for (w = 0; str[w] != '\0'; w++)
-		putchar(str[w]);
+	for (i = 0; str[i] != '\0'; i++)
+		putchar(str[i]);
 	putchar('\n');
 }
 /**
- * _putchar - writes the character c to stdout
+ * _putchar - writes a character to STDOUT
  * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: 1
  */
 int _putchar(char c)
 {

@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
+#define _XOPEN_SOURCE 700
 
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -15,7 +16,7 @@ typedef struct path
 	struct path *next;
 } path_t;
 
-extern char **enviorn;
+extern char **environ;
 /* entry point */
 int main(int argc, char **argv);
 
@@ -24,6 +25,7 @@ void egg(char *snail);
 char *read_line(void);
 char **split_line(char *buffer, char *del);
 int execute_shell(char **args, char *snail);
+
 /* path functions */
 path_t *path_gen(void);
 char *path_check(path_t *head, char *input);
@@ -33,8 +35,9 @@ char *path_cat(char *s1, char *s2);
 int isit_built(char **args, char *input);
 void shell_exit(char **args, char *input);
 void print_enviornment(void);
+
 /* enviornment funcitons */
-path_t *env(void);
+path_t *_env(void);
 char *env_find(char *var);
 int env_match(char *input);
 void env_start(char *str, char *value);
@@ -59,10 +62,10 @@ int _strcmp(char *s1, char *s2);
 char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 char *_strcpy(char *dest, char *src);
-char *_strcpy3(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
 char *_itoa(int num);
-
 int _numlen(int n);
+
 /* variables */
 path_t *the_path;
 path_t *enviornment;
@@ -70,5 +73,6 @@ int line_count;
 void *_realloc(void *ptr, unsigned int before, unsigned int after);
 void errenous(char **args, char *cmd, int errno);
 void sig_handler(int sig_handler);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif

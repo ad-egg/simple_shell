@@ -11,7 +11,7 @@ void egg(char *snail)
 	char **args;
 	int status, i;
 
-	enviornment = env();
+	enviornment = _env();
 	the_path = path_gen();
 	line_count = 0;
 

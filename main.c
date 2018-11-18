@@ -2,10 +2,10 @@
 /**
  * main - shell replica
  * @argc: number of arguments passed
- * @argv: array of strings
+ * @argv: array of arguments to be exectued
  * Return: 0
 */
-int main(int argc, char **argv)  
+int main(int argc, char **argv)
 {
 	if (!argc)
 		return (0);
