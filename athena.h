@@ -13,6 +13,7 @@
 
 extern char **environ;
 
+void printerror(char *arg, int lcount);
 int _strlen(char *s);
 char *getpath(void);
 void print_wd(void);
@@ -20,7 +21,7 @@ void summon_child(char **argument);
 void print_curr_env(void);
 char *_getenv(const char *name);
 void rev_string(char *s);
-void *_itoa(int n, char *str);
+char *_itoa(int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_string(char *line, char *delim);
 char *prompt_getline(void);

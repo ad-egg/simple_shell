@@ -31,12 +31,12 @@ void rev_string(char *s)
 /**
  * _itoa - converts integer into characters to be printed
  * @n: integer to be converted
- * @str: string to be written into
  * Return: pointer to character string
  */
-void *_itoa(int n, char *str)
+void *_itoa(int n)
 {
 	int i, n2;
+	char *str = NULL;
 
 	i = 0;
 
