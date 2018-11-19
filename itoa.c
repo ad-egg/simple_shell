@@ -33,7 +33,7 @@ void rev_string(char *s)
  * @n: integer to be converted
  * Return: pointer to character string
  */
-void *_itoa(int n)
+char *_itoa(int n)
 {
 	int i, n2;
 	char *str = NULL;

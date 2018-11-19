@@ -18,7 +18,7 @@ void printerror(char *arg);
 int _strlen(char *s);
 char *getpath(void);
 void print_wd(void);
-void summon_child(char **argument);
+void summon_child(char *file, char **argument);
 void print_curr_env(void);
 char *_getenv(const char *name);
 void rev_string(char *s);

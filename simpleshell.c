@@ -6,12 +6,13 @@
  */
 int main(void)
 {
-	int status = 1, i, lcount = 0, n, lcountchars = 0;
-
+	int status = 1, n, i;
 	char *line = NULL, **args = NULL,
 	*sp = " ", *sep = ":", *bath = NULL, 
 	**tiles = NULL, **bricks = NULL, *eq = "=", *comp = NULL,
 	*leave = "exit", *flora = "env", *prwd = "pwd";
+	DIR *dir;
+	struct dirent *page;
 
 	bath = getpath();/* got PATH */
 	bricks = split_string(bath, eq);/* splits PATH from rest of string */
@@ -19,14 +20,12 @@ int main(void)
 
 	while (status)
 	{
-		lcount++;
 		if (args != NULL)
 			free(args);
 		if (line != NULL)
 			free(line);
 		line = prompt_getline();
-		/* prints prompt and get the line, should prob handle EOF in this func */
-
+	/* prints prompt and get the line, should prob handle EOF in this func */
 		args = split_string(line, sp);
 		/* splits user input line into string of strings */
 		comp = args[0];
@@ -42,16 +41,19 @@ int main(void)
 			print_wd();
 			continue;
 		}
-
 		for (n = 0; tiles[n] != NULL; n++)
 		{
-			if (_strcmp(tiles[n], comp) == 0)
-				
+			dir = opendir(tiles[n]);
+			if (dir != NULL)
+			{
+				page = readdir(dir);
+				if (_strcmp(comp, page->d_name) == 0)
+					summon_child(tiles[n], args);
+			}
+			closedir(dir);
 		}
 		if (tiles[n] == NULL)
-		{
-			printerror(comp, lcount);
-		}
+			printerror(comp);
 		free(args);
 		free(line);
 	}
