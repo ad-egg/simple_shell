@@ -3,7 +3,7 @@
 /**
  * summon_child - forks a child process to execute a command
  * @file: points to PATH file
- * @argument - points to an array of strings
+ * @argument: points to an array of strings
  */
 void summon_child(char *file, char **argument)
 {

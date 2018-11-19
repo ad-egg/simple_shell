@@ -8,7 +8,7 @@ int main(void)
 {
 	int status = 1, n, i;
 	char *line = NULL, **args = NULL,
-	*sp = " ", *sep = ":", *bath = NULL, 
+	*sp = " ", *sep = ":", *bath = NULL,
 	**tiles = NULL, **bricks = NULL, *eq = "=", *comp = NULL,
 	*leave = "exit", *flora = "env", *prwd = "pwd";
 	DIR *dir;
@@ -27,7 +27,6 @@ int main(void)
 		line = prompt_getline();
 	/* prints prompt and get the line, should prob handle EOF in this func */
 		args = split_string(line, sp);
-		/* splits user input line into string of strings */
 		comp = args[0];
 		if (_strcmp(leave, comp) == 0)
 			return (0);

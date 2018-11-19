@@ -23,7 +23,7 @@ int find_match(const char *s1, char *s2)
 /**
  * _getenv - gets an environment variable
  * @name: name of environment variable to be gotten
- * @Return: pointer to the environment variable
+ * Return: pointer to the environment variable
  */
 char *_getenv(const char *name)
 {
@@ -49,6 +49,6 @@ char *getpath(void)
 	char *name = "PATH";
 	char *string = NULL;
 
-	string = _getenv(name);	
+	string = _getenv(name);
 	return (string);
 }
