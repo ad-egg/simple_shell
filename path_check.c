@@ -52,6 +52,12 @@ char *path_cat(char *s1, char *s2)
 	if (together == NULL)
 		return (NULL);
 	for (count1 = 0; s1[count1]; count1++)
+		together[count1] = s2[count1];
+
+	together[count1] = '/';
+	count1++;
+
+	for (count2 = 0; s2[count2]; count2++)
 		together[count1 + count2] = s2[count2];
 	together[count1 + count2] = '\0';
 	return (together);

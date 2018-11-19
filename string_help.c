@@ -6,16 +6,14 @@
  */
 char *_strdup(char *str)
 {
-	int count;
-	char *s;
+	int count = 0;
+	char *s = NULL;
 
 	if (str == NULL)
 		return (NULL);
 
 	s = malloc(sizeof(char) * (_strlen(str) + 1));
 
-	if (!s)
-		free(s);
 	for (count = 0 ; str[count] != '\0' ; count++)
 		s[count] = str[count];
 	s[count] = '\0';
@@ -48,8 +46,8 @@ int _strcmp(char *st1, char *st2)
  */
 char *_strcat(char *dest, char *src)
 {
-	char *string;
-	int ct1, ct2, st1 = 0, st2 = 0;
+	char *string = NULL;
+	int ct1 = 0, ct2 = 0, st1 = 0, st2 = 0;
 
 	while (dest[st1])
 	{
@@ -79,13 +77,12 @@ char *_strcat(char *dest, char *src)
 }
 char *_strcpy(char *dest, char *src)
 {
-        int sc, kd;
+        int sc = 0;
 
-        for (sc = 0; src[sc] != '0'; sc++)
-                ;
-        for (kd = 0; dest[kd] != '0'; kd++)
-                dest[kd] = src[sc];
-        return (dest);
+        for (sc = 0; src[sc] != '\0'; sc++)
+                dest[sc] = src[sc];
+        dest[sc] = '\0';
+	return (dest);
 }
 /**
  **_strncpy - copy string at a specifix index
@@ -96,7 +93,7 @@ char *_strcpy(char *dest, char *src)
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int i = 0;
 
 	for (i = 0; src[i] != '\0'; i++, n++)
 		dest[n] = src[i];

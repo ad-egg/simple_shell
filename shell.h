@@ -74,5 +74,7 @@ void *_realloc(void *ptr, unsigned int before, unsigned int after);
 void errenous(char **args, char *cmd, int errno);
 void sig_handler(int sig_handler);
 /*ssize_t getline(char **lineptr, size_t *n, FILE *stream);*/
-
+int find_match(const char *s1, char *s2);
+char *_getenv(const char *name);
+char *getpath(void);
 #endif

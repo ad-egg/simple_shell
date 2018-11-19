@@ -3,7 +3,7 @@
 
 /**
  * path_gen - generates the path
- * Return: head
+ * Return: pointer to the head of a list
 */
 path_t *path_gen(void)
 {
@@ -16,20 +16,20 @@ path_t *path_gen(void)
 	if (!node)
 		return (NULL);
 
-	t_path = env_find("PATH"); /* points to variable list */
+	t_path = env_find("PATH"); /* env_findpoints to variable list */
 	if (!t_path)
 	{
 		free(node);
 		return (NULL);
 	}
 
-	token = _strtok(t_path, ":"); /*splits the path into tokens */
+	token = _strtok(t_path, "=:;"); /*splits the path into tokens */
 	head = node;
 	
 	while (token)
 	{
 		node->ptr = _strdup(token);
-		token = _strtok(NULL, ":"); /*replaces with NULL*/
+		token = _strtok(NULL, "=:;"); /*replaces with NULL*/
 		if (token)
 		{ /*put the token in the linked lists if it exists*/
 			node->next = malloc(sizeof(path_t));

@@ -26,8 +26,7 @@ void egg(char *snail)
 			free(line);
 			continue;
 		}
-	
-		args = split_line(line, "\n "); /*split line into arguments*/
+		args = split_line(line, "\n"); /*split line into arguments*/
 		if (isit_built(args, line) == 1)
 			status = execute_shell(args, snail); /*determine when to exit */
 		

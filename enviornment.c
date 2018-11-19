@@ -10,15 +10,15 @@ path_t *_env(void)
 	path_t *house;
 	int count = 0;
 
-	head = malloc(sizeof(path_t)); /*linked list*/
-	if (!head)
-		free (head);
-		return(NULL);
-	
-	house = head; /*pointer to beginning of list */
-
-	while (environ[count]) /*enviorn makes user enviornment*/
+	house = malloc(sizeof(path_t)); /*linked list*/
+	if (!house)
 	{
+		free (house);
+		return(NULL);
+	}
+	head = house; /*pointer to beginning of list */
+	while (environ[count]) /*enviorn makes user enviornment*/
+	{	
 		house->ptr = _strdup(environ[count]);/*dup variable into list*/
 		if (environ[count + 1] != NULL)
 		{
@@ -53,8 +53,6 @@ char *env_find(char *var)
 		{
 			if (var[count] != node->ptr[count])
 				break;
-	/** checks if the nodes are the same then sets it equal to the
-	enviornment variable if theyre the samne*/
 			if (var[count + 1] == '\0' && node->ptr[count + 1] == '=')
 			same = node->ptr;
 			count++;
@@ -64,11 +62,11 @@ char *env_find(char *var)
 			break;
 		node = node->next;
 	}
-	store = malloc(sizeof(char *) * (_strlen(same) - 4));
+	store = malloc(sizeof(char) * (_strlen(same) + 1));
 	if(!store)
-		free (store);
+		/*free (store);*/
 		return (NULL);
-	_strcpy_src(store, same, 5);
+	_strcpy(store, same);
 	return (store);
 }
 /**

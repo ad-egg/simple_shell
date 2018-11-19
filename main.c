@@ -7,9 +7,9 @@
 */
 int main(int argc, char **argv)
 {
-	if (!argc)
-		return (0);
-	egg(argv[0]);
+	(void)argc;
+
+	egg(argv[1]);
 
 	return (0);
 }
