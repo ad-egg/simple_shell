@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int status = 1, n, i;
+	int status = 1, n;
 	char *line = NULL, **args = NULL,
 	*sp = " ", *sep = ":", *bath = NULL,
 	**tiles = NULL, **bricks = NULL, *eq = "=", *comp = NULL,
