@@ -10,10 +10,11 @@
 #include <errno.h>
 #include <string.h>
 #include <dirent.h>
+#include <signal.h>
 
 extern char **environ;
 
-void printerror(char *arg, int lcount);
+void printerror(char *arg);
 int _strlen(char *s);
 char *getpath(void);
 void print_wd(void);
@@ -22,7 +23,6 @@ void print_curr_env(void);
 char *_getenv(const char *name);
 void rev_string(char *s);
 char *_itoa(int n);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_string(char *line, char *delim);
 char *prompt_getline(void);
 int _strcmp(char *s1, char *s2);
