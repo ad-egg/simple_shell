@@ -1,7 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 #define _XOPEN_SOURCE 700
-
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
@@ -10,13 +9,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+extern char **environ;
+
 typedef struct path
 {
 	char *ptr;
 	struct path *next;
 } path_t;
 
-extern char **environ;
 /* entry point */
 int main(int argc, char **argv);
 
@@ -43,9 +43,9 @@ int env_match(char *input);
 void env_start(char *str, char *value);
 
 /* string tokenize functions*/
-int ayto(char z, const char *input);
+int ayto(char z, const char *delim);
 char *_strtok(char *input, const char *delim);
-char **split_line(char *buffer, char *del);
+char **split_line(char *buffer, char *delim);
 int word_count(char *str);
 
 /* execution */
@@ -65,7 +65,7 @@ char *_strcpy(char *dest, char *src);
 char *_strncpy(char *dest, char *src, int n);
 char *_itoa(int num);
 int _numlen(int n);
-
+char *_strcpy_src(char *dest, char *src, int n);
 /* variables */
 path_t *the_path;
 path_t *enviornment;
@@ -73,6 +73,6 @@ int line_count;
 void *_realloc(void *ptr, unsigned int before, unsigned int after);
 void errenous(char **args, char *cmd, int errno);
 void sig_handler(int sig_handler);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+/*ssize_t getline(char **lineptr, size_t *n, FILE *stream);*/
 
 #endif

@@ -12,6 +12,7 @@ path_t *_env(void)
 
 	head = malloc(sizeof(path_t)); /*linked list*/
 	if (!head)
+		free (head);
 		return(NULL);
 	
 	house = head; /*pointer to beginning of list */
@@ -63,10 +64,11 @@ char *env_find(char *var)
 			break;
 		node = node->next;
 	}
-	store = malloc(sizeof(char *) * (_strlen(same)));
-	if(!same)
+	store = malloc(sizeof(char *) * (_strlen(same) - 4));
+	if(!store)
+		free (store);
 		return (NULL);
-	_strcpy(store, same);
+	_strcpy_src(store, same, 5);
 	return (store);
 }
 /**

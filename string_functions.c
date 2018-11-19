@@ -1,5 +1,4 @@
 #include "shell.h"
-#include <unistd.h>
 
 /* string functions */
 
@@ -10,11 +9,12 @@
 */
 int _strlen(char *s)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
+	while (s[i] != '\0')
+		i++;
 	return (i);
+
 }
 
 /**
@@ -39,3 +39,21 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * _strcpy_src - copies a string at specific index
+ * @dest: destination
+ * @src: source (index)
+ * @n: legnth of destination
+ * Return: string copied
+*/
+char *_strcpy_src(char *dest, char *src, int n)
+{
+	int ct;
+
+	for (ct = 0 ; src[ct] != '\0' ; ct++, n++)
+		dest[ct] = src[n];
+	dest[ct] = '\0';
+	return (dest);
+}
+

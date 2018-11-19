@@ -10,6 +10,11 @@ char *read_line(void)
 	
 	
 	write(1, "$", 2);
-	getline(&line, &bufsize, stdin);
+	if(getline(&line, &bufsize, stdin) <= 0)
+	{
+		if(isatty(STDIN_FILENO) == 1)
+			write(STDOUT_FILENO, "\n",1);
+		shell_exit(NULL, line);
+	}
 	return (line);
 }

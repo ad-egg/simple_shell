@@ -39,9 +39,9 @@ void egg(char *snail)
 			i++;
 		}
 		if (line)
-			free (line);
+			free(line);
 		if (args)
-			free (args);
+			free(args);
 	}
 	pth_free(the_path);
 	pth_free(enviornment);

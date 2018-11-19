@@ -9,21 +9,21 @@ path_t *path_gen(void)
 {
 	path_t *head;
 	path_t *node;
-	char *the_path, *token;
+	char *t_path, *token;
 
-	the_path = NULL;
+	t_path = NULL;
 	node = malloc(sizeof(path_t));/* node in linked list */
 	if (!node)
 		return (NULL);
 
-	the_path = env_find("PATH"); /* points to variable list */
-	if (!the_path)
+	t_path = env_find("PATH"); /* points to variable list */
+	if (!t_path)
 	{
-		free(the_path);
+		free(node);
 		return (NULL);
 	}
 
-	token = _strtok(the_path, ":"); /*splits the path into tokens */
+	token = _strtok(t_path, ":"); /*splits the path into tokens */
 	head = node;
 	
 	while (token)
@@ -43,6 +43,6 @@ path_t *path_gen(void)
 		else
 			node->next = NULL;
 	}
-	free(the_path);
+	free(t_path);
 	return (head);
 }

@@ -5,14 +5,15 @@
  * @input: input string
  * Return: 1 if character matches delimeter
  */
-int ayto(char z, const char *input)
+int ayto(char z, const char *delim)
 {
-	int x;
-
-	for(x = 0; input[x] != '\0'; x++)
+	while (*delim && delim)
 	{
-		if (z == input[x])
+		if (z == *delim)
+		{
 			return (1);
+		}
+		++delim;
 	}
 	return (0);
 }

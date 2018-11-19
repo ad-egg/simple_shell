@@ -14,9 +14,8 @@ char *_strdup(char *str)
 
 	s = malloc(sizeof(char) * (_strlen(str) + 1));
 
-	if (s == NULL)
-		return (NULL);
-
+	if (!s)
+		free(s);
 	for (count = 0 ; str[count] != '\0' ; count++)
 		s[count] = str[count];
 	s[count] = '\0';
@@ -63,6 +62,8 @@ char *_strcat(char *dest, char *src)
 
 	string = malloc(sizeof(st1 + st2 + 2));
 
+	if (!string)
+		free(string);
 	for (ct1 = 0 ; dest[ct1] != '\0' ; ct1++)
 	{
 		string[ct1] = dest[ct1];

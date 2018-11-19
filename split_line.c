@@ -28,7 +28,7 @@ int word_count(char *str)
  * Return: pointer to array of tokens
 */
 
-char **split_line(char *buffer, char *del)
+char **split_line(char *buffer, char *delim)
 {
 	char *tokens, *house;
 	int count = word_count(buffer);
@@ -46,7 +46,7 @@ char **split_line(char *buffer, char *del)
 		perror("Error\n");
 		return (NULL);
 	}
-	tokens = _strtok(house, del);
+	tokens = _strtok(house, delim);
 
 	while (tokens)
 	{
@@ -64,7 +64,7 @@ char **split_line(char *buffer, char *del)
 		}
 		_strcpy(words[i], tokens);
 		i++;
-		tokens = _strtok(NULL, del);
+		tokens = _strtok(NULL, delim);
 	}
 	words[i] = NULL;
 	free(house);
