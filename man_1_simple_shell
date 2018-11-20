@@ -22,5 +22,8 @@ hsh main.c simple_shell.c
 .br
 $
 
+.SH RETURN VALUE
+Always 0.
+
 .SH AUTHORS
 Athena Deng and Rashaad Colbert Jr
