@@ -11,6 +11,11 @@
 
 extern char **environ;
 
+/**
+ * struct path - linked list of environment variables
+ * @ptr: pointer to environment variable string
+ * @next: points to next node in linked list
+ */
 typedef struct path
 {
 	char *ptr;
