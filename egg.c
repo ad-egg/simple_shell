@@ -17,7 +17,7 @@ void egg(char *snail)
 
 	status = 1; /*keeps loop running while shell is open */
 	while (status)
-	 {
+	{
 		/*signal(SIGINT, sig_handler);*/
 		line_count++;
 		line = read_line();/*function to read a line*/
@@ -29,7 +29,7 @@ void egg(char *snail)
 		args = split_line(line, "\n"); /*split line into arguments*/
 		if (isit_built(args, line) == 1)
 			status = execute_shell(args, snail); /*determine when to exit */
-		
+
 		i = 0;
 		while (args[i] != NULL)
 		{
@@ -44,4 +44,4 @@ void egg(char *snail)
 	}
 	pth_free(the_path);
 	pth_free(enviornment);
-}		 
+}
