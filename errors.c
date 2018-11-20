@@ -4,7 +4,7 @@
  * errenous - handles erros
  * @args: arguments
  * @cmd: command that was passed from input
- * @error: error
+ * @errno: error
  * Return: void.
  */
 void errenous(char **args, char *cmd, int errno)
