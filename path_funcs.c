@@ -25,7 +25,7 @@ path_t *path_gen(void)
 
 	token = _strtok(t_path, "=:;"); /*splits the path into tokens */
 	head = node;
-	
+
 	while (token)
 	{
 		if (token)
