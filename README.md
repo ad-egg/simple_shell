@@ -105,3 +105,18 @@ What our UNIX command line interpreter does:
 What our shell does not have to do:
 - Be able to move the cursor.
 - Handle special characters: `"`, `'`, `\`, `*`, `&`, `#`, `` ` ``
+
+| **File**  | **Description** |
+| ------------- | ------------- |
+| **main.c**  | entry point of program  |
+| **egg.c**  | Main strucute of the program that handles everything  |
+| **pathfuncs.c** | handles the path |
+| **envstart.c** | sets a linked list for enviornment variables |
+| **strtok.c** | creates a buffer for strings to be tokenized |
+| **readline.c** | reads user input and returns a prompt |
+| **splitline.c**| creates an array of tokenized args |
+| **isitbuilt.c**| checks if a command is built in or not |
+| **execute.c**| forks a process and creates a child PID|
+
+Rashaad Colbert Jr. [Github](https://github.com/rcolbert30)
+Athena Deng [Github](https://github.com/ad-egg) 
