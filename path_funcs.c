@@ -28,6 +28,7 @@ path_t *path_gen(void)
 	
 	while (token)
 	{
+		if (token)
 		node->ptr = _strdup(token);
 		token = _strtok(NULL, "=:;"); /*replaces with NULL*/
 		if (token)
