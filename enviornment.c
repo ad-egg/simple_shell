@@ -13,12 +13,12 @@ path_t *_env(void)
 	house = malloc(sizeof(path_t)); /*linked list*/
 	if (!house)
 	{
-		free (house);
-		return(NULL);
+		free(house);
+		return (NULL);
 	}
 	head = house; /*pointer to beginning of list */
 	while (environ[count]) /*enviorn makes user enviornment*/
-	{	
+	{
 		house->ptr = _strdup(environ[count]);/*dup variable into list*/
 		if (environ[count + 1] != NULL)
 		{
@@ -49,28 +49,28 @@ char *env_find(char *var)
 	{
 		count = 0;
 	/*while there are arguments*/
-		while (var[count]) 
+		while (var[count])
 		{
 			if (var[count] != node->ptr[count])
 				break;
 			if (var[count + 1] == '\0' && node->ptr[count + 1] == '=')
 			same = node->ptr;
 			count++;
-		 }
+		}
 		/** once we find a match exit loop*/
-		if(same)
+		if (same)
 			break;
 		node = node->next;
 	}
 	store = malloc(sizeof(char) * (_strlen(same) + 1));
-	if(!store)
+	if (!store)
 		/*free (store);*/
 		return (NULL);
 	_strcpy(store, same);
 	return (store);
 }
 /**
- * env_matcher - finds the matching enviornment with the argument passed
+ * env_match - finds the matching enviornment with the argument passed
  * @input: argument passed
  * Return: 0 on success, -1 if no match
 */
@@ -83,7 +83,7 @@ int env_match(char *input)
 	while (peter)
 	{
 		count = 0;
-		while(input[count] == peter->ptr[count])
+		while (input[count] == peter->ptr[count])
 		{
 			count++;
 			if (input[count + 1] == '\0' && (peter->ptr)[count + 1] == '=')
