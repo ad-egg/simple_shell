@@ -13,7 +13,7 @@ int word_count(char *str)
 	if (!str)
 		return (-1);
 
-	for(l = 0; str[l] != '\0'; l++)
+	for (l = 0; str[l] != '\0'; l++)
 	{
 		if (str[l] == delim)
 			count++;
@@ -24,7 +24,7 @@ int word_count(char *str)
 /**
  * split_line - tokenizes a buffer
  * @buffer: args to tokenize
- * @del: delemiter ""
+ * @delim: delemiter ""
  * Return: pointer to array of tokens
 */
 
@@ -68,5 +68,5 @@ char **split_line(char *buffer, char *delim)
 	}
 	words[i] = NULL;
 	free(house);
-	return(words);
+	return (words);
 }
