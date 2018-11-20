@@ -13,16 +13,16 @@ char *path_check(path_t *head, char *input)
 	path_t *node;
 	char *arguments;
 
-	if(!input || !head)
+	if (!input || !head)
 		return (NULL);
 
 	node = head;
 	while (node)
 	{
 		arguments = path_cat(node->ptr, input);
-		if(!arguments)
+		if (!arguments)
 			return (NULL);
-		if(stat(arguments, &falcon) == 0)
+		if (stat(arguments, &falcon) == 0)
 		{
 			return (arguments);
 		}
