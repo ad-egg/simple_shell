@@ -8,7 +8,7 @@
 
 int isit_built(char **args, char *input)
 {
-	if(_strcmp(args[0], "exit") == 0)
+	if (_strcmp(args[0], "exit") == 0)
 	{
 		shell_exit(args, input);
 		return (0);
@@ -16,7 +16,7 @@ int isit_built(char **args, char *input)
 	else if (_strcmp(args[0], "env") == 0)
 	{
 		print_enviornment();
-		return(0);
+		return (0);
 	}
 	else if (_strcmp(args[0], "setenv") == 0)
 	{
@@ -25,4 +25,3 @@ int isit_built(char **args, char *input)
 	}
 	return (1);
 }
-	
