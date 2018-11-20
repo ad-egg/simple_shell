@@ -12,29 +12,22 @@ void env_start(char *str, char *value)
 	char *val, *new_env;
 	int val_len = 0, len = 0, counter = 0;
 
-	if(!str || !value)
+	if (!str || !value)
 	{
 		perror("enviornment variable not passed");
-		exit (1);
+		exit(1);
 	}
-
 	len = env_match(str);
-
 	var = malloc(sizeof(path_t));
 	if (!var)
-	{
 		perror("error, error, error");
-	}
-
 	val = _strcat(str, "=");
 	val_len = _strlen(val);
 	new_env = _realloc(val, val_len, (val_len + _strlen(value) + 1));
 	_strncpy(new_env, value, val_len);
-
 	copy = enviornment;
 	node = enviornment;
-
-	if(len >= 0)
+	if (len >= 0)
 	{
 		while (counter != (len - 1))
 		{
@@ -51,9 +44,7 @@ void env_start(char *str, char *value)
 	else
 	{
 		while (node->next != NULL)
-		{
 			node = node->next;
-		}
 		var->ptr = new_env;
 		node->next = var;
 		var->next = NULL;
