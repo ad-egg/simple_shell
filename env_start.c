@@ -14,8 +14,8 @@ void env_start(char *str, char *value)
 
 	if(!str || !value)
 	{
-		perror("something has gone terribly wrong");
-		exit(0);
+		perror("enviornment variable not passed");
+		exit (1);
 	}
 
 	len = env_match(str);

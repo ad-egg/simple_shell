@@ -19,8 +19,8 @@ char *path_check(path_t *head, char *input)
 	node = head;
 	while (node)
 	{
-		arguments = path_cat (node->ptr, input);
-		if(!input)
+		arguments = path_cat(node->ptr, input);
+		if(!arguments)
 			return (NULL);
 		if(stat(arguments, &falcon) == 0)
 		{

@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
 	(void)argc;
 
-	egg(argv[1]);
+	egg(argv[0]);
 
 	return (0);
 }

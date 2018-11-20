@@ -9,7 +9,7 @@ char *read_line(void)
 	size_t bufsize = 0; /*will change according to input*/
 	
 	
-	write(1, "$", 2);
+	write(1, "$ ", 2);
 	if(getline(&line, &bufsize, stdin) <= 0)
 	{
 		if(isatty(STDIN_FILENO) == 1)
