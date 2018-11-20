@@ -17,7 +17,7 @@ int cmp_exec(char **args, char *snail)
 	else
 	{
 		ex = (path_check(the_path, args[0]));
-		if(!ex)
+		if (!ex)
 			errenous(args, snail, 1);
 		if (execve(ex, args, NULL) == -1)
 			errenous(args, snail, 2);
@@ -25,9 +25,9 @@ int cmp_exec(char **args, char *snail)
 	return (1);
 }
 /**
- * execute - forks the current process then exectues the command
+ * execute_shell - forks the current process then exectues the command
  * @args: arguemnt recieved
- * @eggs: shell
+ * @snail: shell
  * Return: -1, 0, 1
 */
 
