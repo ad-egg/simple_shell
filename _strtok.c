@@ -2,7 +2,7 @@
 /**
  * ayto - checks if the chracter is the delimeter (Are You The One)
  * @z: char being matched
- * @input: input string
+ * @delim: input string
  * Return: 1 if character matches delimeter
  */
 int ayto(char z, const char *delim)
@@ -20,7 +20,7 @@ int ayto(char z, const char *delim)
 
 /**
  * _strtok - creates an array of tokens
- * @str: input string
+ * @input: input string
  * @delim: delimater " "
  * Return: pointer to head of list PATH
 */
