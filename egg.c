@@ -18,7 +18,7 @@ void egg(char *snail)
 	status = 1; /*keeps loop running while shell is open */
 	while (status)
 	{
-		/*signal(SIGINT, sig_handler);*/
+		signal(SIGINT, sig_handler);
 		line_count++;
 		line = read_line();/*function to read a line*/
 		if (line[0] == '\n')

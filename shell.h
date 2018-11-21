@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "signal.h"
 extern char **environ;
 
 /**
@@ -71,6 +71,7 @@ char *_strncpy(char *dest, char *src, int n);
 char *_itoa(int num);
 int _numlen(int n);
 char *_strcpy_src(char *dest, char *src, int n);
+void _puts(char *str);
 /* variables */
 path_t *the_path;
 path_t *enviornment;
