@@ -6,28 +6,28 @@
  * Return: NULL if not matched
 */
 
-char *path_check(path_t *head, char *input)
+char *path_check(path_t *head, char *line)
 {
 
-	struct stat falcon;
-	path_t *node;
+/*	struct stat falcon;*/
+	path_t *temp;
 	char *arguments;
 
-	if (!input || !head)
+	if (!line || !head)
 		return (NULL);
 
-	node = head;
-	while (node)
+	temp = head;
+	while (temp)
 	{
-		arguments = path_cat(node->ptr, input);
+		arguments = path_cat(temp->ptr, line);
 		if (!arguments)
 			return (NULL);
-		if (stat(arguments, &falcon) == 0)
+/*		if (stat(arguments, &falcon) == 0)
 		{
 			return (arguments);
-		}
+		}*/
 		free(arguments);
-		node = node->next;
+		temp = temp->next;
 	}
 	return (NULL);
 }
@@ -60,5 +60,6 @@ char *path_cat(char *s1, char *s2)
 	for (count2 = 0; s2[count2]; count2++)
 		together[count1 + count2] = s2[count2];
 	together[count1 + count2] = '\0';
+	printf("aaa%s\n", together);
 	return (together);
 }

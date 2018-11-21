@@ -48,5 +48,6 @@ char *_strtok(char *input, const char *delim)
 	if (w[v] == '\0' && _strlen(w) > 0)
 		control = 1;
 	w = w + _strlen(w) + control;
+	printf("%s\n", tokens);
 	return (tokens);
 }
